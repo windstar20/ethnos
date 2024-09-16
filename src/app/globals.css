@@ -5,11 +5,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-mono: Pretendard, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+  'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+  'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #225d2f;
     --foreground: #ededed;
   }
 }
@@ -17,7 +20,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Pretendard, Helvetica, sans-serif;
 }
 
 @layer utilities {
