@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import "../@shared/styles/reset.css";
 import "./globals.css";
 import { PropsWithChildren } from "react";
-
+/*
 const geistSans = localFont({
   src: "../@shared/fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -15,7 +15,7 @@ const geistMono = localFont({
   src: "../@shared/fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
-});
+});*/
 
 const pretendardMedium = localFont({
   src: "../@shared/fonts/Pretendard-Medium.subset.woff",
