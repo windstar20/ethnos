@@ -1,27 +1,31 @@
-'use client'
+'use client';
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { useState } from 'react'
+import { useState } from 'react';
 
-export default function ReactQueryProviders({children}: React.PropsWithChildren) {
-	const [queryClient] = useState(
-		() =>
-			new QueryClient({
-				defaultOptions: {
-					queries: {
-						// With SSR, we usually want to set some default staleTime
-						// above 0 to avoid refetching immediately on the client
-						staleTime: 60 * 1000,
-					},
-				},
-			}),
-	)
+export default function ReactQueryProviders({
+  children,
+}: React.PropsWithChildren) {
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            // With SSR, we usually want to set some default staleTime
+            // above 0 to avoid refetching immediately on the client
+            staleTime: 60 * 1000,
+          },
+        },
+      }),
+  );
 
-	return (
-		<QueryClientProvider client={queryClient}>
-			{children}
-			<ReactQueryDevtools initialIsOpen={false}/>
-		</QueryClientProvider>
-	)
+  return (
+    <QueryClientProvider client={queryClient}>
+      {children}
+      <ReactQueryDevtools
+        initialIsOpen={process.env.NODE_ENV === 'development'}
+      />
+    </QueryClientProvider>
+  );
 }

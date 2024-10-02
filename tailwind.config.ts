@@ -11,6 +11,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'custom-62.5': '62.5%', 
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
