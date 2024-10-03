@@ -1,3 +1,4 @@
+import { nextui } from "@nextui-org/react";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -8,6 +9,7 @@ const config: Config = {
     "./src/01widgets/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/02features/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/03entities/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -20,6 +22,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  darkMode: "class",
+  plugins: [nextui()],
 };
 export default config;
