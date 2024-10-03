@@ -1,21 +1,11 @@
-import { LayoutHeader } from '@/01widgets/LayoutHeader/ui';
+import { LayoutHeader } from '@/widgets/LayoutHeader/ui';
 import ReactQueryProviders from '@/@shared/hooks/useReactQuery';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import '@/@shared/styles/reset.css';
+// import '@/@shared/styles/reset.css';
 import '@/@shared/styles/globals.css';
 import { PropsWithChildren } from 'react';
-/*
-const geistSans = localFont({
-  src: "../@shared/fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "../@shared/fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-}); */
+import { NextUIProvider } from '@nextui-org/react';
 
 const pretendardMedium = localFont({
   src: '../@shared/fonts/Pretendard-Medium.subset.woff',
@@ -36,8 +26,10 @@ export default function RootLayout({ children }: PropsWithChildren) {
         className={`${pretendardMedium.variable} ${pretendardMedium.variable} h-lvh`}
       >
         <ReactQueryProviders>
-          <LayoutHeader />
-          {children}
+          <NextUIProvider>
+            <LayoutHeader />
+            {children}
+          </NextUIProvider>
         </ReactQueryProviders>
       </body>
     </html>
