@@ -5,7 +5,6 @@ import localFont from 'next/font/local';
 // import '@/@shared/styles/reset.css';
 import '@/@shared/styles/globals.css';
 import { PropsWithChildren } from 'react';
-import { NextUIProvider } from '@nextui-org/react';
 
 const pretendardMedium = localFont({
   src: '../@shared/fonts/Pretendard-Medium.subset.woff',
@@ -26,10 +25,8 @@ export default function RootLayout({ children }: PropsWithChildren) {
         className={`${pretendardMedium.variable} ${pretendardMedium.variable} h-lvh`}
       >
         <ReactQueryProviders>
-          <NextUIProvider>
-            <LayoutHeader />
-            {children}
-          </NextUIProvider>
+          {/*<LayoutHeader />*/}
+          {children}
         </ReactQueryProviders>
       </body>
     </html>
