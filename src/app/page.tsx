@@ -1,4 +1,14 @@
-import { flexStyle, formWrapperStyle, mainStyle } from '@/app/page.css';
+import {
+  buttonStyle,
+  buttonWrapperStyle,
+  flexStyle,
+  formWrapperStyle,
+  inputStyle,
+  inputWrapperStyle,
+  mainStyle,
+  titleContainerStyle,
+  titleStyle,
+} from '@/app/page.css';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
@@ -19,22 +29,27 @@ export default function Home() {
         <section className={flexStyle}>
           <div className={formWrapperStyle}>
             <div className={'flex flex-col'}>
-              <div className={'flex justify-center items-center'}>
-                <span>In My Family</span>
+              <div className={titleContainerStyle}>
+                <h1 className={titleStyle}>In My Family</h1>
               </div>
               <div>
-                <div>
+                <div className={inputWrapperStyle}>
                   <input
                     type={'text'}
                     placeholder={'전화번호, 사용자 이름 또는 이메일'}
+                    className={inputStyle}
                   />
                 </div>
-                <div>
-                  <input type={'password'} placeholder={'비밀번호'} />
+                <div className={inputWrapperStyle}>
+                  <input
+                    type={'password'}
+                    placeholder={'비밀번호'}
+                    className={inputStyle}
+                  />
                 </div>
               </div>
-              <div>
-                <Button>로그인</Button>
+              <div className={buttonWrapperStyle}>
+                <Button className={buttonStyle}>로그인</Button>
               </div>
             </div>
           </div>
