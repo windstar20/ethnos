@@ -1,13 +1,16 @@
 import {
   buttonStyle,
   buttonWrapperStyle,
+  flexCenterCenterStyle,
   flexStyle,
+  footerContainerStyle,
   formWrapperStyle,
   inputStyle,
   inputWrapperStyle,
   mainStyle,
   titleContainerStyle,
   titleStyle,
+  wrapperStyle,
 } from '@/app/page.css';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
@@ -26,7 +29,7 @@ export default function Home() {
             height={400}
           />
         </section>
-        <section className={flexStyle}>
+        <section className={flexCenterCenterStyle}>
           <div className={formWrapperStyle}>
             <div className={'flex flex-col'}>
               <div className={titleContainerStyle}>
@@ -55,20 +58,16 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className={'p-6 h-13'}>
-        <div>
-          <ul>
-            <li>InMyFamily</li>
-            <li>소개</li>
-            <li>소개</li>
-            <li>개인정보처리방침</li>
-            <li>약관</li>
-          </ul>
-        </div>
-        <div>
-          <span>한국어</span>
-          <span>©2024 </span>
-        </div>
+      <footer className={footerContainerStyle}>
+        <ul className={wrapperStyle}>
+          <li>InMyFamily</li>
+          <li>소개</li>
+          <li>소개</li>
+          <li>개인정보처리방침</li>
+          <li>약관</li>
+          <li>한국어</li>
+          <li>©2024</li>
+        </ul>
       </footer>
     </div>
   );

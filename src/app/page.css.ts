@@ -1,5 +1,18 @@
 import { style } from '@vanilla-extract/css';
 
+export const flexStyle = style({
+  display: 'flex',
+});
+export const alignCenterStyle = style({
+  alignItems: 'center',
+});
+export const justifyCenterStyle = style({
+  justifyContent: 'center',
+});
+export const justifyBetweenStyle = style({
+  justifyContent: 'space-between',
+});
+
 export const gridStyle = style({
   display: 'grid',
   gridTemplateColumns: 'repeat(2, 1fr)',
@@ -8,10 +21,10 @@ export const gridStyle = style({
 export const mainStyle = style({
   display: 'grid',
   gridTemplateColumns: 'repeat(2, 1fr)',
-  height: `calc(100dvh - 12rem)`,
+  height: `calc(100dvh - 5rem)`,
 });
 
-export const flexStyle = style({
+export const flexCenterCenterStyle = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -25,7 +38,7 @@ export const formWrapperStyle = style({
 });
 
 export const titleContainerStyle = style([
-  flexStyle,
+  flexCenterCenterStyle,
   {
     height: '13.7rem',
   },
@@ -66,4 +79,23 @@ export const buttonStyle = style([
       },
     },
   },
+]);
+
+export const footerContainerStyle = style([
+  flexStyle,
+  justifyCenterStyle,
+  {
+    height: '5rem',
+    backgroundColor: '#e9e9e9',
+  },
+]);
+
+export const columnGapStyle = style({
+  columnGap: '2rem',
+});
+export const wrapperStyle = style([
+  flexStyle,
+  alignCenterStyle,
+  columnGapStyle,
+  { padding: '0 4rem' },
 ]);
